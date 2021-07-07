@@ -1,5 +1,6 @@
 package one.digitalinnovation.personapi.controller;
 
+import lombok.AllArgsConstructor;
 import one.digitalinnovation.personapi.dto.request.PersonDTO;
 import one.digitalinnovation.personapi.dto.response.MessageResponseDTO;
 import one.digitalinnovation.personapi.entity.Person;
@@ -14,14 +15,10 @@ import java.util.List;
 
 @RestController //
 @RequestMapping("/api/v1/people") //caminho de acesso principal da API
+@AllArgsConstructor(onConstructor = @__(@Autowired)) //consigo remover o construtor padrão
 public class PersonController {
 
     private PersonService personService;
-
-    @Autowired
-    public PersonController(PersonService personService) {
-        this.personService = personService;
-    }
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)//forçando a me retornar o código 201 quando for criado um usuário
