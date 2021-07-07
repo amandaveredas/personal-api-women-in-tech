@@ -40,9 +40,15 @@ public class PersonController {
         return personService.findById(id);
     }
 
+    @PutMapping("/{id}")
+    public MessageResponseDTO updateById(@PathVariable Long id, @RequestBody PersonDTO personDTO) throws PersonNotFoundException {
+        return personService.updateById(id, personDTO);
+
+    }
+
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void deleteById(@PathVariable Long id) throws PersonNotFoundException { //essa anotação serve para 
+    public void deleteById(@PathVariable Long id) throws PersonNotFoundException { //essa anotação serve para anotar os argumentos do método
         personService.delete(id);
     }
 
