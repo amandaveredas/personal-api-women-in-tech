@@ -31,6 +31,18 @@ public class Person {
 
     private LocalDate birthDate;
 
+    @Column(nullable = false, unique = true)
+    private String email;
+
+    @Column(nullable = false)
+    private String city;
+
+    private String professionalExperience;
+
+    private String academicFormation;
+
+    private String skills;
+
     //estratégia de inserção com  cascade
     //perfomance de busca com fectch
     @OneToMany (fetch = FetchType.LAZY, cascade = {CascadeType.PERSIST, CascadeType.REMOVE, CascadeType.MERGE}) //uma pessoa pode ter vários telefones

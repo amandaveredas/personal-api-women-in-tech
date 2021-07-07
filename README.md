@@ -4,7 +4,7 @@ API para cadastro de mulheres que trabalham ou desejam trabalhar na área de TI.
 Realizada durante o bootCamp da Digital Innovation One.
 
 Alterações feitas por mim:
-* Inserção de campos de cadastro como: cidade, e-mail, estudos, experiência profissional e skills em programação.
+* Inserção de campos de cadastro como: cidade, e-mail, formação acadêmica, experiência profissional e skills em programação.
 
 Pré-requisitos:
 
