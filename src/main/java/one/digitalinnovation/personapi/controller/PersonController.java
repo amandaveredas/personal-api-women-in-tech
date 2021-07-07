@@ -9,6 +9,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.List;
 
 @RestController //
 @RequestMapping("/api/v1/people") //caminho de acesso principal da API
@@ -25,6 +26,12 @@ public class PersonController {
     @ResponseStatus(HttpStatus.CREATED)//forçando a me retornar o código 201 quando for criado um usuário
     public MessageResponseDTO createPerson(@RequestBody @Valid PersonDTO personDTO) { //essa anotação serve para avisar que o post será feito por uma requisição http
         return personService.createPerson(personDTO);
+    }
+
+    //chamando uma lista com todas as pessoas
+    @GetMapping
+    public List<PersonDTO> listAll() {
+        return personService.listAll();
     }
 
 
